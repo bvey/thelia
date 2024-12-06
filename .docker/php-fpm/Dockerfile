@@ -37,10 +37,10 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
 # XDebug extension
-#RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
-#  && pecl install xdebug \
-#  && docker-php-ext-enable xdebug \
-#  && apk del -f .build-deps
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
+  && pecl install xdebug \
+  && docker-php-ext-enable xdebug \
+  && apk del -f .build-deps
 
 # Intl extension
 RUN apk add icu-dev
@@ -62,6 +62,10 @@ RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} \
 # Composer copy and run
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 CMD composer install ;  php-fpm
+
+# Install node && Yarn
+RUN apk add --update --no-cache nodejs npm
+RUN npm install -g yarn
 
 # Copy script used at docker-start
 COPY docker-init.sh /usr/local/bin/docker-init
