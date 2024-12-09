@@ -14,6 +14,7 @@ namespace TwigEngine\Service\API;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
+use Thelia\Api\Resource\AbstractTranslatableResource;
 use Thelia\Api\Resource\TranslatableResourceInterface;
 use Thelia\Service\Model\LangService;
 

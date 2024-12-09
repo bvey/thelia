@@ -48,10 +48,16 @@
         "thelia/tinymce-module": "2.5.*",
         "thelia/virtual-product-control-module": "2.5.*",
         "thelia/web-profiler-module": "2.5.*",
-        "thelia/thelia-library-module": "1.*",
+        "thelia/thelia-library-module": "^1.2",
         "thelia/thelia-blocks-module": "dev-twig",
         "symfony/flex": "^2.4",
-        "thelia/short-code-module": "^2.0"
+        "thelia/short-code-module": "^2.0",
+        "thelia/twig-engine-module": "^0.0.1",
+        "thelia/product-loop-attribute-filter-module": "^2.0",
+        "thelia/choice-filter-module": "^2.1",
+        "thelia/store-seo-module": "^2.0",
+        "thelia/smarty-redirection-module": "^2.0",
+        "thelia/short-code-meta-module": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "9.5.*",
